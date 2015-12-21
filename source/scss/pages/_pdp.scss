@@ -1,0 +1,85 @@
+/* ====================================
+ * PDP
+ * ==================================== */
+.pdp {
+  .details {
+    padding: $base-spacing * 2 0 0;
+  }
+  .product-description {
+    position: fixed;
+    top: $base-spacing * 6;
+    left: 0px;
+    z-index: 1;
+    @include breakpoint(xs) {
+      position: relative;
+      top: 0;
+      padding: $base-spacing 15px;
+    }
+    @include breakpoint(sm) {
+      position: relative;
+      top: 0;
+      padding: $base-spacing 15px;
+    }
+  }
+  .additional-shot {
+    margin: $base-spacing *2 0;
+  }
+  .cta {
+    a {
+      color: black;
+      @extend %medium-font;
+      border: 2px solid black;
+      padding: 5px 14px;
+      text-decoration: none;
+      display: inline-block;
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+
+  }
+}
+
+.related-work {
+  margin-top: $base-spacing * 4;
+  position: relative;
+  a {
+    @extend %xl-font;
+    font-family: 'brownregular', sans-serif;
+    color: white;
+    background: #000;
+    background-size: cover!important;
+    background-position: center;
+    position: relative;
+    display: block;
+    z-index: 9999;
+    span.cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    span.title {
+      position: absolute;
+      top: $base-spacing * 4;
+      left: 15px;
+      z-index: 2;
+    }
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: $base-spacing * 4;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  left: 0;
+  top: -$base-spacing * 4;
+  z-index: 99999;
+}

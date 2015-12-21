@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>{{options.title}}</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="styleguide">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/uno.css">
+  <link rel="stylesheet" href="/css/style.css">
+  {{{styles}}}
+</head>
+<body id="styleguide">
+
+<div class="uno-sidebar uno-style">
+  <header class="uno-header">
+    <h1 class="uno-doc-title">{{options.title}}</h1>
+  </header>
+  <nav class="uno-nav">
+    <ul class="uno-nav__menu">
+      <li class="uno-nav__menu-item">
+        <a href="./">
+          <!-- <span class="uno-nav__ref">0</span> -->
+          <span class="uno-nav__name">Overview</span>
+        </a>
+      </li>
+    {{#eachRoot}}
+      <li class="uno-nav__menu-item">
+        <a href="section-{{referenceURI}}.html">
+          <!-- <span class="uno-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
+          > -->
+          <span class="uno-nav__name">{{header}}</span>
+        </a>
+      {{#ifReference ../rootName}}
+        <ul class="uno-nav__menu-child">
+        {{#eachSection reference}}
+          {{#ifDepth 2}}
+            <li class="uno-nav__menu-item">
+              <a href="section-{{../../referenceURI}}.html#unoref-{{referenceURI}}">
+                <!-- <span class="uno-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
+                > -->
+                <span class="uno-nav__name">{{header}}</span>
+              </a>
+            </li>
+          {{/ifDepth}}
+        {{/eachSection}}
+        </ul>
+      {{/ifReference}}
+      </li>
+    {{/eachRoot}}
+    </ul>
+  </nav>
+</div>
+<article role="main" class="uno-main">
+{{#if homepage}}
+  <div id="unoref-0" class="uno-section uno-section--depth-0 uno-overview uno-style">
+    {{{homepage}}}
+  </div>
+{{else}}
+
+  {{!
+    Display each section, in order.
+
+    The "root" element comes first in this loop, and can be detected using
+    the "#ifDepth 1" block as seen below.
+  }}
+  {{#eachSection rootName}}
+    {{#ifDepth 1}}
+      <div     id="unoref-{{referenceURI}}" class="uno-section uno-section--depth-{{depth}}">
+    {{else}}
+      <section id="unoref-{{referenceURI}}" class="uno-section uno-section--depth-{{depth}}">
+    {{/ifDepth}}
+
+    <div class="uno-style">
+      <h{{depth}} class="uno-title uno-title--level-{{depth}}">
+        <a class="uno-title__permalink" href="#unoref-{{referenceURI}}">
+          <!-- <span class="uno-title__ref">
+            {{#ifNumeric reference}}
+              {{reference}}
+            {{else}}
+              {{autoincrement}}
+            {{/ifNumeric}}
+            <span class="uno-title__permalink-hash">
+              {{#ifNumeric reference}}
+                #permalink
+              {{else}}
+                #{{reference}}
+              {{/ifNumeric}}
+            </span>
+          </span> -->
+          {{header}}
+        </a>
+      </h{{depth}}>
+
+    {{#if parameters}}
+      <ul class="uno-parameters">
+      {{#eachParameter}}
+        <li class="uno-parameters__item">
+          <code class="uno-parameters__name">{{name}}</code>
+          <div class="uno-parameters__description">{{{description}}}</div>
+        </li>
+      {{/eachParameter}}
+      </ul>
+    {{/if}}
+
+    {{#if description}}
+      <div class="uno-description">
+        {{{description}}}
+      </div>
+    {{/if}}
+    </div>
+
+    {{#if markup}}
+      <div class="uno-modifier__wrapper">
+        <!-- <div class="uno-modifier__heading uno-style">
+          Example{{#if modifiers}}s{{/if}}
+        </div> -->
+      {{#if modifiers}}
+        <div class="uno-modifier__default-name uno-style">
+          Default styling
+        </div>
+      {{/if}}
+        <div class="uno-modifier__example">
+          {{{markup}}}
+        </div>
+      {{#eachModifier}}
+        <div class="uno-modifier__name uno-style">
+          {{name}}
+        </div>
+        <div class="uno-modifier__description uno-style">
+          {{{description}}}
+        </div>
+        <div class="uno-modifier__example">
+          {{{markup}}}
+        </div>
+      {{/eachModifier}}
+      </div>
+
+      <div class="uno-markup uno-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
+      </div>
+    {{/if}}
+
+    {{#ifDepth 1}}
+      </div>
+    {{else}}
+      </section>
+    {{/ifDepth}}
+  {{/eachSection}}
+{{/if}}
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script>
+  prettyPrint();
+</script>
+{{{scripts}}}
+
+{{! This will only be included in the demo page. }}
+{{#if options.xdemo}}
+  <footer class="uno-github">
+    <!-- https://github.com/blog/273-github-ribbons -->
+    <a href="https://github.com/uno-node/uno-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
+  </footer>
+{{/if}}
+
+<!-- Automatically generated using <a href="https://github.com/uno-node/uno-node">uno-node</a>. -->
+</body>
+</html>

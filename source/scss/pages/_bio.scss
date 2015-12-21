@@ -1,0 +1,38 @@
+/* ====================================
+ * BIO
+ * ==================================== */
+.bio-page {
+  .bio-intro-img {
+    position: relative;
+    // top: -170px;
+    z-index: 0;
+  }
+  .main-content {
+    position: relative;
+    padding: $base-spacing * 2 0;
+  }
+  .upcoming-shows {
+    padding-top: $base-spacing * 4;
+    padding-bottom: $base-spacing * 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        padding: $base-spacing * 2 0;
+        .show-date {
+          margin: 0;
+        }
+        .show-name {
+          margin-bottom: $base-spacing;
+          span.location {
+            color: $color-gray;
+          }
+        }
+        .show-description {
+          @extend %xs-font;
+        }
+      }
+    }
+  }
+}

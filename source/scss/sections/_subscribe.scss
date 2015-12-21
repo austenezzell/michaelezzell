@@ -1,0 +1,53 @@
+/* ====================================
+ * Subscribe
+ * ==================================== */
+.close-form {
+  @extend %medium-font;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+.subscribe {
+  background: rgba(black,.94);
+  color: white;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  .form {
+    padding: $base-spacing;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    input[type="email"] {
+      border: 2px solid white;
+      background: none;
+      width: 60%;
+      height: 50px;
+      @extend %medium-font;
+    }
+    button.email-submit {
+      border: 2px solid white;
+      background: none;
+      width: 17%;
+      height: 50px;
+      @extend %medium-font;
+      position: relative;
+      top: 4px;
+      @include breakpoint(xs) {
+        top: 2px;
+      }
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}

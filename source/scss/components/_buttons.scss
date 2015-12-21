@@ -1,0 +1,59 @@
+/*
+Buttons
+
+Your standard button suitable for clicking.
+
+Markup:
+<a class="btn {{modifier_class}}">Anchor</a>
+<button class="btn {{modifier_class}}">Button</button>
+<button class="btn {{modifier_class}}" disabled>Disabled</button>
+
+.btn-primary - Mostly used for call to action
+.btn-secondary - Alternate call to action
+
+Style guide: Components.Buttons
+*/
+
+$bg-button: #111;
+$bg-button-primary: #00a9c5;
+$bg-button-secondary: #c500a9;
+
+@mixin btn-color($color) {
+  background-color: $color;
+  color: #fff;
+  &:hover,
+  &:focus {
+    background-color: mix($color, #fff, 60%);
+  }
+}
+
+.btn {
+  @include btn-color($bg-button);
+  @include regular-font();
+  line-height: 1;
+  border: none;
+  padding: 0.66em 1.32em;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  @include btn-color($bg-button-primary);
+}
+
+.btn-secondary {
+  @include btn-color($bg-button-secondary);
+}
+
+.btn[disabled] {
+  background: #CCC;
+  color: gray;
+  cursor: default;
+}

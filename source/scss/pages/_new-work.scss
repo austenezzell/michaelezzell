@@ -1,0 +1,86 @@
+/* ====================================
+ * New Work / SHOP
+ * ==================================== */
+
+.filter {
+  padding: $base-spacing * 4 0 $base-spacing * 2;
+  display: block;
+  .active {
+    text-decoration: underline!important;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      float: left;
+      padding: 0 12px 0 0;
+      a {
+        color: $color-black;
+        text-decoration: none;
+        &:hover, &:active, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.new-work-page, .shop-page {
+  .new-work-container {
+    padding-top: $base-spacing * 8;
+    padding-bottom: $base-spacing * 4;
+    display: block;
+  }
+  .product {
+    margin-bottom: $base-spacing * 6;
+  }
+  a.module {
+    .image {
+      transition: all 0.4s ease;
+    }
+    .description {
+      transition: all 0.4s ease;
+    }
+    &:hover {
+      .image {
+        transform: scale3d(0.9,0.9,1);
+      }
+      .description {
+        transform: translate3d(0,-15px,0);
+      }
+    }
+  }
+}
+
+.description {
+  margin-bottom: $base-spacing * 2;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      float: left;
+      padding: 12px 12px 0 0;
+      h3, p {
+        color: $color-black;
+        @extend %small-font;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        color: $color-gray;
+        padding-left: 12px;
+      }
+    }
+  }
+}
+
+
+.text-section {
+  margin: $base-spacing *4 0;
+}
+.process-images {
+  margin: $base-spacing *4 0;
+}

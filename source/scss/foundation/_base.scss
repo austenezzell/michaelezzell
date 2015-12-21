@@ -1,0 +1,18 @@
+/* ====================================
+   General site styling
+   ==================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include regular-font();
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}

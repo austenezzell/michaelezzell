@@ -1,0 +1,90 @@
+/* ====================================
+ * Header
+ * ==================================== */
+
+header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  transition: all 0.8s ease;
+  top: 0;
+}
+header.up {
+  top: -250px;
+  transition: all 0.8s ease;
+}
+header.down {
+  top: 0;
+  transition: all 0.8s ease;
+}
+.menu-active {
+  header.up, header.down {
+    top: 0;
+    position: fixed;
+  }
+}
+header.hover {
+  background: rgba(white, .95);
+}
+
+.site-title {
+  z-index: 10;
+  position: absolute;
+  a {
+    @extend %xl-font;
+    font-family: 'brownregular', sans-serif;
+    color: black;
+    letter-spacing: 3px;
+    transition: all 0.8s ease;
+    span {
+      transition: all 0.8s ease;
+      @include breakpoint(xs) {
+        display: none;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      span {
+        color: $color-gray;
+      }
+    }
+  }
+
+  svg {
+    g#ichael, g#zzell {
+      opacity: 0;
+      @include breakpoint(md) {
+        opacity: 1;
+      }
+      @include breakpoint(lg) {
+        opacity: 1;
+      }
+    }
+    g#glass, g#bronze, g#ceramic {
+      opacity: 0;
+      @include breakpoint(md) {
+        opacity: 1;
+      }
+      @include breakpoint(lg) {
+        opacity: 1;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    g#slash_mediums {
+      transform: translate(32px,0px);
+
+      @include breakpoint(md) {
+        transform: translate(175px,0px);
+      }
+      @include breakpoint(lg) {
+        transform: translate(175px,0px);
+      }
+
+    }
+
+  }
+}

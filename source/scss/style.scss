@@ -1,0 +1,63 @@
+/*
+Dependencies
+*/
+
+@import "dependencies/mixins";
+@import "dependencies/colors";
+@import "dependencies/fonts";
+
+/*
+Foundation
+
+Style guide: Foundation
+*/
+
+@import "foundation/base";
+@import "foundation/typography";
+@import "foundation/icons";
+
+/*
+Helpers
+
+*/
+
+@import "helpers/classes";
+
+/*
+Components
+
+Weight: +1
+
+Style guide: Components
+*/
+
+@import "components/buttons";
+@import "components/lists";
+@import "components/media";
+@import "components/forms";
+
+/*
+Regions
+
+Weight: +2
+
+Style guide: Regions
+*/
+
+@import "sections/header";
+@import "sections/navigation";
+@import "sections/footer";
+@import "sections/subscribe";
+
+/*
+Pages
+
+Weight: +3
+
+Style guide: Pages
+*/
+
+@import "pages/_home.scss";
+@import "pages/_new-work.scss";
+@import "pages/_bio.scss";
+@import "pages/_pdp.scss";

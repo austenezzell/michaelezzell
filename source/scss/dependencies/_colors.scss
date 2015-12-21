@@ -1,0 +1,32 @@
+/* ====================================
+   Site colors
+   ==================================== */
+
+/*
+   Brand colors
+   ==================================== */
+
+// "color-" could be changed to "client-name"
+$color-black: #111111;
+$color-red: #ff0000;
+$color-green: #00ff00;
+$color-blue: #0000ff;
+$color-gray: #cccccc;
+$color-light-gray: #E6E6E6;
+$color-dark-gray: #444444;
+
+/*
+   Text colors
+   ==================================== */
+
+$color-text: #111111;
+$color-link: #0000ff;
+$color-link-hover: darken($color-link, 10%);
+
+/*
+   Third party brand colors
+   ==================================== */
+
+$color-facebook: #03539e;
+$color-twitter: #35ccff;
+$color-linkedin: #217bc1;
