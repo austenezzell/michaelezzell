@@ -15,6 +15,8 @@
               duration: 400,
               display: 'block'
             });
+            $('input#email').focus();
+
           });
 
           $('.close-form').click(function(e){
@@ -30,7 +32,7 @@
        };
 
        meApp.pdp = function(){
-         $('.related-work').hover(function(){
+         $('.related-work span').hover(function(){
            $('.cover').velocity('stop').velocity({
              opacity: .1
            },{
@@ -250,7 +252,12 @@
        // Turn the given MailChimp form into an ajax version of it.
        // If resultElement is given, the subscribe result is set as html to
        // that element.
+
+
+
+
        function ajaxMailChimpForm($form, $resultElement) {
+
          // Hijack the submission. We'll submit the form manually.
          $form.submit(function(e) {
            e.preventDefault();
@@ -296,13 +303,22 @@
                $resultElement.css("color", "red");
                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
                  message = "You're already subscribed. Thank you.";
-                 $resultElement.css("color", "black");
+                 $resultElement.css("color", "white");
                }
                $resultElement.html(message);
              } else {
-               $resultElement.css("color", "black");
-
+               $resultElement.css("color", "white");
                $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
+
+               $('.subscribe').velocity({
+                 opacity: 0,
+                 top: 40
+               },{
+                 delay: 800,
+                 duration: 400,
+                 display: 'none'
+               });
+
              }
            }
          });
@@ -323,7 +339,7 @@
          meApp.pdp();
          meApp.mailingList();
 
-        //  ajaxMailChimpForm($('.subscribe-form-1'), $('.subscribe-result-1'));
+        ajaxMailChimpForm($('.subscribe-form'),$('.subscribe-result'));
        };
 
        (function($, window, document) {

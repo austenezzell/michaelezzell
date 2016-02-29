@@ -22,8 +22,9 @@ nav {
          margin-top: 58px;
          display: inline-block;
          color: black;
-         letter-spacing: 3px;
+         text-decoration: none;
          @extend %lg-font;
+         letter-spacing: 3px;
          &:hover {
            color:  $color-gray;
            text-decoration: none;
@@ -31,6 +32,7 @@ nav {
          @include breakpoint(xs) {
             padding-top: 0;
             margin-top: 33px;
+            letter-spacing: 0;
          }
          @include breakpoint(lg) {
             margin-top: 81px;

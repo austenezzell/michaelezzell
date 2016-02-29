@@ -32,6 +32,9 @@
         .show-description {
           @extend %xs-font;
         }
+        a {
+          display: inline-block;
+        }
       }
     }
   }

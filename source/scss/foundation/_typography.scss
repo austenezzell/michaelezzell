@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   @include bold-font();
   margin-top: $font-margin-top;
   margin-bottom: $font-margin-bottom;
+  color: black;
 }
 
 h1, .h1 {
@@ -16,6 +17,9 @@ h1, .h1 {
   font-family: 'brownregular', sans-serif;
   letter-spacing: 3px;
   word-spacing: 3px;
+  @include breakpoint(xs) {
+    letter-spacing: 0;
+  }
 }
 
 h2, .h2 {
@@ -23,6 +27,9 @@ h2, .h2 {
   font-family: 'brownregular', sans-serif;
   letter-spacing: 3px;
   word-spacing: 3px;
+  @include breakpoint(xs) {
+    letter-spacing: 0;
+  }
 }
 
 h3, .h3 {
@@ -30,6 +37,9 @@ h3, .h3 {
   font-family: 'brownlight', sans-serif;
   letter-spacing: 3px;
   word-spacing: 3px;
+  @include breakpoint(xs) {
+    letter-spacing: 0;
+  }
 }
 
 h4, .h4 {
@@ -64,7 +74,7 @@ p, ul, ol, pre, table, blockquote {
 
 p {}
 
-a {}
+a { color: black; text-decoration: underline;}
 
 p a {}
 

@@ -80,6 +80,13 @@
 
 .text-section {
   margin: $base-spacing *4 0;
+  p.date {
+    margin: 0;
+    color: $color-gray;
+  }
+  h1 {
+    margin-top: 5px;
+  }
 }
 .process-images {
   margin: $base-spacing *4 0;
