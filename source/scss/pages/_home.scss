@@ -16,8 +16,8 @@
     }
   }
   .store {
-    margin-top: $base-spacing * 6;
-    margin-bottom: $base-spacing * 6;
+    margin-top: $base-spacing * 3;
+    margin-bottom: $base-spacing * 3;
     @include breakpoint(md) {
       margin-top: $base-spacing * 10;
       margin-bottom: $base-spacing * 10;

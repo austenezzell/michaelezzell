@@ -61,6 +61,11 @@
   margin-bottom: $base-spacing;
 }
 
+.margin-vertical-4 {
+  margin-top: $base-spacing * 4;
+  margin-bottom: $base-spacing * 4;
+}
+
 .margin-vertical-10 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -78,6 +83,21 @@
 
 .margin-top {
   margin-top: $base-spacing;
+}
+
+.margin-top_2 {
+  margin-top: $base-spacing * 2;
+}
+
+.margin-top_3 {
+  margin-top: $base-spacing * 3;
+}
+
+.margin-top_4 {
+  margin-top: $base-spacing * 2;
+  @include breakpoint(md) {
+    margin-top: $base-spacing * 4;
+  }
 }
 
 .margin-right {

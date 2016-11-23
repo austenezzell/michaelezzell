@@ -122,11 +122,11 @@
        meApp.header = function() {
          var $header = $('header');
 
-         $header.hover(function(){
-           $(this).addClass('hover');
-         }, function(){
-           $(this).removeClass('hover');
-         });
+        //  $header.hover(function(){
+        //    $(this).addClass('hover');
+        //  }, function(){
+        //    $(this).removeClass('hover');
+        //  });
 
 
 
