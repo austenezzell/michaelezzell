@@ -5,14 +5,20 @@
 /* Headings
  * ==================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include bold-font();
   margin-top: $font-margin-top;
   margin-bottom: $font-margin-bottom;
   color: black;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   @extend %xl-font;
   font-family: 'brownregular', sans-serif;
   letter-spacing: 3px;
@@ -22,7 +28,8 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   @extend %xl-font;
   font-family: 'brownregular', sans-serif;
   letter-spacing: 3px;
@@ -32,7 +39,8 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   @extend %large-font;
   font-family: 'brownlight', sans-serif;
   letter-spacing: 3px;
@@ -42,7 +50,8 @@ h3, .h3 {
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   @extend %xl-font;
   line-height: $body-line-height;
   color: $color-black;
@@ -52,12 +61,14 @@ h4, .h4 {
   }
 }
 
-h5, .h5 {
+h5,
+.h5 {
   @extend %small-font;
   font-family: 'brownbold', sans-serif;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   @extend %small-font;
   font-family: 'brownbold', sans-serif;
 }
@@ -65,31 +76,47 @@ h6, .h6 {
 /* Paragraphs, links and combined
  * ==================================== */
 
-p, ul, ol, pre, table, blockquote {
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
   @extend %small-font;
   font-weight: 300;
   margin-top: $font-margin-top;
   margin-bottom: $font-margin-bottom;
 }
 
-p {}
+p {
+}
 
-a { color: black; text-decoration: underline;}
+a {
+  color: black;
+  text-decoration: underline;
+}
 
-p a {}
+p a {
+}
 
 /* Separate elements
  * ==================================== */
 
-em {}
+em {
+}
 
-strong, b {}
+strong,
+b {
+}
 
-i {}
+i {
+}
 
-time {}
+time {
+}
 
-hr {}
+hr {
+}
 
 ::selection {
   background-color: $color-black;
@@ -108,5 +135,8 @@ button {
 }
 
 sup {
-  top: -.35em;
+  top: -0.35em;
+}
+.italic {
+  font-style: italic;
 }

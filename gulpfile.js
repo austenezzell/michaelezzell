@@ -39,7 +39,7 @@ gulp.task('styles', function () {
   return gulp.src(source + '/scss/**/style.scss')
     .pipe($.plumber(plumberConfig))
     .pipe($.sass())
-    .pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
+    //.pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
     .pipe(gulp.dest(build + '/css/'));
 });
 
@@ -100,7 +100,7 @@ gulp.task('html-default', function() {
   var styles = gulp.src(source + '/scss/**/style.scss')
     .pipe($.plumber(plumberConfig))
     .pipe($.sass())
-    .pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
+    //.pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
     .pipe(gulp.dest(build + '/css/'));
 
   return gulp.src([
@@ -172,7 +172,7 @@ gulp.task('html-build', function() {
     .pipe($.plumber(plumberConfig))
     .pipe($.sass())
     .pipe($.concat('style.css'))
-    .pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
+    //.pipe($.autoprefixer((["last 1 version", "> 1%", "ie 8", "ie 7"], { cascade: true })))
     .pipe($.minifyCss())
     .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest(build + '/css/'));

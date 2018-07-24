@@ -100,6 +100,13 @@
   }
 }
 
+.margin-top_8 {
+  margin-top: $base-spacing * 4;
+  @include breakpoint(md) {
+    margin-top: $base-spacing * 8;
+  }
+}
+
 .margin-right {
   margin-right: $base-spacing;
 }
@@ -202,13 +209,13 @@
   display: inline-block;
 }
 
-.showgrid [class*="col-"] {
+.showgrid [class*='col-'] {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #eee;
-  background-color: rgba(86,61,124,.15);
+  background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid #ddd;
-  border: 1px solid rgba(86,61,124,.2);
+  border: 1px solid rgba(86, 61, 124, 0.2);
 }
 
 .section {
@@ -227,7 +234,6 @@
   @include breakpoint(lg) {
     display: none;
   }
-
 }
 
 .no-wrap {

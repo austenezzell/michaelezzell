@@ -1,7 +1,8 @@
 /* ====================================
  * PDP
  * ==================================== */
-.pdp {
+.pdp,
+.pdp-sale {
   .details {
     padding: $base-spacing * 2 0 0;
   }
@@ -20,6 +21,9 @@
       top: 0;
       padding: $base-spacing 15px;
     }
+    .sold {
+      color: red;
+    }
   }
   .additional-shot {
     margin: $base-spacing *2 0;
@@ -37,7 +41,6 @@
         color: white;
       }
     }
-
   }
 }
 
@@ -49,7 +52,7 @@
     font-family: 'brownregular', sans-serif;
     color: white;
     background: #000;
-    background-size: cover!important;
+    background-size: cover !important;
     background-position: center;
     position: relative;
     display: block;
@@ -69,7 +72,8 @@
       left: 15px;
       z-index: 2;
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
     }
   }
@@ -78,7 +82,11 @@
   position: absolute;
   width: 100%;
   height: $base-spacing * 4;
-  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   left: 0;
   top: -$base-spacing * 4;
   z-index: 99999;
